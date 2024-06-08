@@ -1,0 +1,14 @@
+body {
+  padding: 20px;
+  background: url(../public/bmi\ 1.jpeg);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+}
+
+form * {
+  margin-bottom: 10px;
+}
