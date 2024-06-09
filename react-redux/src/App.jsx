@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Cart from './Cart';
 import { useDispatch } from 'react-redux';
+import { addToCart } from './actions';
 
 function App() {
   const dispatch = useDispatch();
@@ -78,7 +79,7 @@ function App() {
                 <td>{prod.name}</td>
                 <td>{prod.price}$</td>
                 <td>
-                  <button onClick={() => dispatch({ type: "ADD_TO_CART", payload: prod })}>Ajouter au panier</button>
+                  <button onClick={() => dispatch(addToCart(prod))}>Ajouter au panier</button>
                 </td>
               </tr>
             })

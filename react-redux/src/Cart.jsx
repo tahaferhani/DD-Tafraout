@@ -1,6 +1,8 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { removeFromCart } from "./actions";
 
 export default () => {
+    const dispatch = useDispatch();
     const items = useSelector(state => state);
 
     return <div>
@@ -11,6 +13,7 @@ export default () => {
                     <th>ID</th>
                     <th>Name</th>
                     <th>Price</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -20,6 +23,7 @@ export default () => {
                             <td>{item.id}</td>
                             <td>{item.name}</td>
                             <td>{item.price}</td>
+                            <td><button onClick={() => dispatch(removeFromCart(item.id))}>Supprimer</button></td>
                         </tr>
                     })
                 }
